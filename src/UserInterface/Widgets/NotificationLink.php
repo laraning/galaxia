@@ -2,8 +2,6 @@
 
 namespace Laraning\Galaxia\UserInterface\Widgets;
 
-use Laraning\Galaxia\UserInterface\Widgets\BreadCrumbLink;
-
 class NotificationLink
 {
     public $title;

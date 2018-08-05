@@ -3,7 +3,6 @@
 namespace Laraning\Galaxia\UserInterface\Widgets;
 
 use Illuminate\Support\Collection;
-use Laraning\Galaxia\UserInterface\Widgets\NotificationLink;
 
 class NotificationList
 {

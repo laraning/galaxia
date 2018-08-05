@@ -3,7 +3,6 @@
 namespace Laraning\Galaxia\UserInterface\ViewComposers;
 
 use Illuminate\View\View;
-use Laraning\Galaxia\Models\Notification;
 use Laraning\Galaxia\UserInterface\Widgets\BreadCrumb;
 
 class BreadcrumbComposer
@@ -15,7 +14,8 @@ class BreadcrumbComposer
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
+     * @param View $view
+     *
      * @return void
      */
     public function compose(View $view)

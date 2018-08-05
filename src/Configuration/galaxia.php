@@ -6,8 +6,8 @@ return [
     'database' => [
         'table' => [
             // What's the prefix you want to have in Galaxia tables? No need to put the underscore.
-            'prefix' => 'galaxia'
-        ]
+            'prefix' => 'galaxia',
+        ],
     ],
 
     /*** Widget parameters ***/
@@ -18,8 +18,8 @@ return [
         */
         'breadcrumb' => [
             'prefix' => [
-                'delete' => ''
-            ]
+                'delete' => '',
+            ],
         ],
     ],
 

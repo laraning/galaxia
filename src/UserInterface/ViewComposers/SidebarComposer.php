@@ -14,12 +14,12 @@ class SidebarComposer
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
+     * @param View $view
+     *
      * @return void
      */
     public function compose(View $view)
     {
-
         $sidebar = new Sidebar();
         $link1 = $sidebar->link()->withTitle('Test 1')->withBaseline('154 notifications');
         $link2 = $sidebar->link()->withTitle('Test 2');

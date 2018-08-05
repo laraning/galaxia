@@ -2,7 +2,7 @@
 
 namespace Laraning\Galaxia\UserInterface\Widgets;
 
-class BreadCrumbLink
+class BreadcrumbLink
 {
     public $label;
     public $link;

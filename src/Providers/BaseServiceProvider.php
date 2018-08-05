@@ -54,14 +54,14 @@ class BaseServiceProvider extends ServiceProvider
     {
         Route::group(['middleware' => ['web',
                                        'firewall-blacklist',
-                                       'firewall-blockattacks']], function ($router) {
-                                        $this->loadRoutesFrom(__DIR__.'/../Routes/default.php');
+                                       'firewall-blockattacks', ]], function ($router) {
+                                           $this->loadRoutesFrom(__DIR__.'/../Routes/default.php');
                                        });
 
         Route::group(['middleware' => ['web',
                                        'firewall-blacklist',
-                                       'firewall-blockattacks']], function ($router) {
-                                        $this->loadRoutesFrom(__DIR__.'/../Routes/custom.php');
+                                       'firewall-blockattacks', ]], function ($router) {
+                                           $this->loadRoutesFrom(__DIR__.'/../Routes/custom.php');
                                        });
     }
 

@@ -62,11 +62,8 @@ class BreadCrumb
         // Get current resource without segment bindings.
         $segments = get_uri_collection_without_bindings();
 
-        // Get route prefix to be removed from the breadcrumb.
-        $routePrefixSegments = collect(config('galaxia.breadcrumb.prefix.delete'));
-
         // Recreate segments by removing the first segments that belong to the route prefix.
-        $segments = $segments->slice($routePrefixSegments->count());
+        $segments = $segments->slice(config('galaxia.widgets.breadcrumb.prefix.delete-indexes'));
 
         // Add non-links to breadcrumb.
         foreach ($segments as $key => $item) {
@@ -74,36 +71,5 @@ class BreadCrumb
         };
 
         return $this->links();
-    }
-
-    /**
-     * Renders the breadcrumb.
-     *
-     * @return string HTML to be rendered.
-     */
-    public function render()
-    {
-        $this->$html = '<div class="breadcrumb-line"><ul class="breadcrumb breadcrumb-arrow">';
-
-        // Good old for-loop style :)
-        for ($i = 0; $i < $this->$links->count(); $i++) {
-            $item = $this->$links->slice($i, 1)->first();
-
-            $class = $i == $this->$links->count() - 1 ? 'class="active"' : '';
-
-            // If there is only one breadrumb link, then render it as active.
-            if ($this->$links->count() == 1) {
-                $this->$html .= '<li><a href="/'.urlencode($item->link).'"><i class="icon-home2 position-left"></i>&nbsp;'.htmlentities($item->label).'</a></li>';
-            } // In case it's not the last breadcrumb link, and there is a link, then render the link. If it's the first one then it always render.
-            elseif (isset($item->link) && $i != $this->$links->count() - 1) {
-                $this->$html .= '<li><a href="/'.urlencode($item->link).'">'.htmlentities($item->label).'</a></li>';
-            } else { // All others (non links, and the last breadcrumb link).
-                $this->$html .= '<li '.$class.'>'.htmlentities($item->label).'</li>';
-            }
-        }
-
-        $this->$html .= '</ul></div>';
-
-        return $this->$html;
     }
 }

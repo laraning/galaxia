@@ -16,7 +16,9 @@ class CreateGalaxiaSchema extends Migration
         Schema::create(config('galaxia.database.table.prefix') . '_notifications', function (Blueprint $table) {
             $table->uuid('id');
 
-            $table->integer('user_id');
+            $table->integer('user_id')
+                  ->nullable()
+                  ->comment('If the user id is null, then it will be broadcasted to all users and it cannot be marked as read.');
 
             $table->string('title');
             $table->string('baseline')
@@ -35,6 +37,12 @@ class CreateGalaxiaSchema extends Migration
                   ->default(false);
 
             $table->datetime('read_at')
+                  ->nullable();
+
+            $table->datetime('start_at')
+                  ->nullable();
+
+            $table->datetime('end_at')
                   ->nullable();
 
             $table->timestamps();

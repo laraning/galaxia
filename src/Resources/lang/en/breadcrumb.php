@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'galaxia' => 'Home'
+    'galaxia' => 'Home',
+    'demo' => 'Demo'
 ];

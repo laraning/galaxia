@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraning\Galaxia\Features\Welcome\Controllers;
+namespace App\Features\Welcome\Controllers;
 
 use App\Http\Controllers\Controller;
 

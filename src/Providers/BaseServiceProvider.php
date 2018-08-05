@@ -73,8 +73,12 @@ class BaseServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            __DIR__.'/../Resources/assets' => public_path(),
+            __DIR__.'/../Resources/assets' => public_path('galaxia'),
         ], 'galaxia-assets');
+
+        $this->publishes([
+            __DIR__.'/../Features' => app_path('Features'),
+        ], 'galaxia-features');
     }
 
     protected function loadTranslations()

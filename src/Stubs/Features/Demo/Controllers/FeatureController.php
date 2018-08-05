@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Features\Welcome\Controllers;
+namespace App\Features\Demo\Controllers;
 
 use App\Http\Controllers\Controller;
 
@@ -11,7 +11,7 @@ class FeatureController extends Controller
         // Add your middleware, if needed.
     }
 
-    public function default()
+    public function index()
     {
         return flame();
     }

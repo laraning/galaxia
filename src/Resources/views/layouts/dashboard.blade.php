@@ -11,7 +11,7 @@
             <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
             <!-- BEGIN SIDEBAR MENU HEADER-->
             <div class="sidebar-header">
-                <img src="assets/img/logo_white.png" alt="logo" class="brand" data-src="assets/img/logo_white.png" data-src-retina="assets/img/logo_white_2x.png" width="78" height="22">
+                <img src="/galaxia/assets/img/logo_white.png" alt="logo" class="brand" data-src="/galaxia/assets/img/logo_white.png" data-src-retina="assets/img/logo_white_2x.png" width="78" height="22">
                 <div class="sidebar-header-controls">
                     <button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i>
                     </button>
@@ -37,7 +37,7 @@
                 <!-- END MOBILE SIDEBAR TOGGLE -->
                 <div class="">
                     <div class="brand inline  m-l-10 ">
-                        <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+                        <img src="/galaxia/assets/img/logo.png" alt="logo" data-src="/galaxia/assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
                     </div>
                     <!-- START NOTIFICATION LIST -->
                     @include('galaxia-ui::partials.notifications.notifications-container')
@@ -51,7 +51,7 @@
                     <div class="dropdown pull-right d-lg-block d-none">
                         <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="thumbnail-wrapper d32 circular inline">
-                        <img src="assets/img/profiles/avatar.jpg" alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+                        <img src="/galaxia/assets/img/profiles/avatar.jpg" alt="" data-src="/galaxia/assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
                         </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
@@ -345,7 +345,7 @@
                                         <li class="chat-user-list clearfix">
                                             <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
                                                 <span class="thumbnail-wrapper d32 circular bg-success">
-                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg" class="col-top">
+                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="/galaxia/assets/img/profiles/1.jpg" alt="" src="/galaxia/assets/img/profiles/1.jpg" class="col-top">
                                                 </span>
                                                 <p class="p-l-10 ">
                                                     <span class="text-master">ava flores</span>
@@ -363,7 +363,7 @@
                                         <li class="chat-user-list clearfix">
                                             <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
                                                 <span class="thumbnail-wrapper d32 circular bg-success">
-                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg" class="col-top">
+                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="/galaxia/assets/img/profiles/1.jpg" alt="" src="/galaxia/assets/img/profiles/1.jpg" class="col-top">
                                                 </span>
                                                 <p class="p-l-10 ">
                                                     <span class="text-master">bella mccoy</span>
@@ -376,7 +376,7 @@
                                         <li class="chat-user-list clearfix">
                                             <a data-view-animation="push-parrallax" data-view-port="#chat" data-navigate="view" class="" href="#">
                                                 <span class="thumbnail-wrapper d32 circular bg-success">
-                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg" class="col-top">
+                                                <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="/galaxia/assets/img/profiles/1.jpg" alt="" src="/galaxia/assets/img/profiles/1.jpg" class="col-top">
                                                 </span>
                                                 <p class="p-l-10 ">
                                                     <span class="text-master">bob stephens</span>
@@ -419,7 +419,7 @@
                                 <!-- BEGIN From Them Message  !-->
                                 <div class="message clearfix">
                                     <div class="profile-img-wrapper m-t-5 inline">
-                                        <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg" class="col-top">
+                                        <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="/galaxia/assets/img/profiles/1.jpg" alt="" src="/galaxia/assets/img/profiles/1.jpg" class="col-top">
                                     </div>
                                     <div class="chat-bubble from-them">
                                         Hey
@@ -443,7 +443,7 @@
                                 <!-- BEGIN From Them Message  !-->
                                 <div class="message clearfix">
                                     <div class="profile-img-wrapper m-t-5 inline">
-                                        <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="assets/img/profiles/1.jpg" alt="" src="assets/img/profiles/1.jpg" class="col-top">
+                                        <img width="34" height="34" data-src-retina="assets/img/profiles/1x.jpg" data-src="/galaxia/assets/img/profiles/1.jpg" alt="" src="/galaxia/assets/img/profiles/1.jpg" class="col-top">
                                     </div>
                                     <div class="chat-bubble from-them">
                                         Yea
@@ -481,7 +481,7 @@
                 <!-- BEGIN Overlay Header !-->
                 <div class="container-fluid">
                     <!-- BEGIN Overlay Logo !-->
-                    <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+                    <img class="overlay-brand" src="/galaxia/assets/img/logo.png" alt="logo" data-src="/galaxia/assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
                     <!-- END Overlay Logo !-->
                     <!-- BEGIN Overlay Close !-->
                     <a href="#" class="close-icon-light overlay-close text-black fs-16">
@@ -606,23 +606,23 @@
         <!-- END OVERLAY -->
         <!-- BEGIN VENDOR JS -->
         <!-- BEGIN VENDOR JS -->
-        <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/popper/umd/popper.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
-        <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="/galaxia/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/popper/umd/popper.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+        <script src="/galaxia/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
         <!-- END VENDOR JS -->
         <!-- BEGIN CORE TEMPLATE JS -->
         <script src="pages/js/pages.min.js" type="text/javascript"></script>
         <!-- END CORE TEMPLATE JS -->
         <!-- BEGIN PAGE LEVEL JS -->
-        <script src="assets/js/scripts.js" type="text/javascript"></script>
+        <script src="/galaxia/assets/js/scripts.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL JS -->
     </body>
 </html>

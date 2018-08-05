@@ -2,6 +2,7 @@
 
 namespace Laraning\Galaxia\Providers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -73,7 +74,19 @@ class BaseServiceProvider extends ServiceProvider
 
     protected function loadViews()
     {
-        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'galaxia-ui');
+        // Identify vendor/packages path.
+        $base = File::exists(base_path('vendor' . DIRECTORY_SEPARATOR . 'laraning' . DIRECTORY_SEPARATOR . 'galaxia')) ?
+                'vendor' : 'packages';
+
+        $this->loadViewsFrom(
+            base_path($base .
+                      DIRECTORY_SEPARATOR . 'laraning' .
+                      DIRECTORY_SEPARATOR . 'galaxia' .
+                      DIRECTORY_SEPARATOR . 'src' .
+                      DIRECTORY_SEPARATOR . 'Resources' .
+                      DIRECTORY_SEPARATOR . 'views'),
+            'galaxia-ui'
+        );
     }
 
     protected function publishAssets()
@@ -83,8 +96,8 @@ class BaseServiceProvider extends ServiceProvider
         ], 'galaxia-assets');
 
         $this->publishes([
-            __DIR__.'/../Features' => app_path('Features'),
-        ], 'galaxia-features');
+            __DIR__.'/../Stubs/Features' => app_path('Features'),
+        ], 'galaxia-demo-feature');
     }
 
     protected function loadTranslations()

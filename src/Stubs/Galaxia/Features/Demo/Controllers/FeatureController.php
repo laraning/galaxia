@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Features\Demo\Controllers;
+namespace App\Galaxia\Features\Demo\Controllers;
 
 use App\Http\Controllers\Controller;
 

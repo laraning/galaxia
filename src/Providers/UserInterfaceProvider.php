@@ -16,12 +16,12 @@ class UserInterfaceProvider extends ServiceProvider
     {
         View::composer(
             'galaxia-ui::partials.sidebar.tree',
-            'Laraning\Galaxia\UserInterface\ViewComposers\SidebarComposer'
+            'App\Galaxia\ViewComposers\SidebarComposer'
         );
 
         View::composer(
             'galaxia-ui::partials.breadcrumb',
-            'Laraning\Galaxia\UserInterface\ViewComposers\BreadcrumbComposer'
+            'App\Galaxia\ViewComposers\BreadcrumbComposer'
         );
 
         View::composer(

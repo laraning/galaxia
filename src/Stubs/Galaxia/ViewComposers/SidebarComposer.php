@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraning\Galaxia\UserInterface\ViewComposers;
+namespace App\Galaxia\ViewComposers;
 
 use Illuminate\View\View;
 use Laraning\Galaxia\UserInterface\Widgets\Sidebar;

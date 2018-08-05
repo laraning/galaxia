@@ -93,11 +93,11 @@ class BaseServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Resources/assets' => public_path('galaxia'),
-        ], 'galaxia-assets');
+        ], 'galaxia-ui-assets');
 
         $this->publishes([
-            __DIR__.'/../Stubs/Features' => app_path('Features'),
-        ], 'galaxia-demo-feature');
+            __DIR__.'/../Stubs/Galaxia' => app_path('Galaxia'),
+        ], 'galaxia-framework-assets');
     }
 
     protected function loadTranslations()

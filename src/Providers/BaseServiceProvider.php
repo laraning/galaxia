@@ -75,16 +75,16 @@ class BaseServiceProvider extends ServiceProvider
     protected function loadViews()
     {
         // Identify vendor/packages path.
-        $base = File::exists(base_path('vendor' . DIRECTORY_SEPARATOR . 'laraning' . DIRECTORY_SEPARATOR . 'galaxia')) ?
+        $base = File::exists(base_path('vendor'.DIRECTORY_SEPARATOR.'laraning'.DIRECTORY_SEPARATOR.'galaxia')) ?
                 'vendor' : 'packages';
 
         $this->loadViewsFrom(
-            base_path($base .
-                      DIRECTORY_SEPARATOR . 'laraning' .
-                      DIRECTORY_SEPARATOR . 'galaxia' .
-                      DIRECTORY_SEPARATOR . 'src' .
-                      DIRECTORY_SEPARATOR . 'Resources' .
-                      DIRECTORY_SEPARATOR . 'views'),
+            base_path($base.
+                      DIRECTORY_SEPARATOR.'laraning'.
+                      DIRECTORY_SEPARATOR.'galaxia'.
+                      DIRECTORY_SEPARATOR.'src'.
+                      DIRECTORY_SEPARATOR.'Resources'.
+                      DIRECTORY_SEPARATOR.'views'),
             'galaxia-ui'
         );
     }

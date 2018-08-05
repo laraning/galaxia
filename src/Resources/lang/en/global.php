@@ -2,6 +2,6 @@
 
 return [
     'site' => [
-        'title' => 'Alexis - Maman de Jour planning'
-    ]
+        'title' => 'Alexis - Maman de Jour planning',
+    ],
 ];

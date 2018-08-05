@@ -3,7 +3,6 @@
 namespace Laraning\Galaxia\UserInterface\Widgets;
 
 use Illuminate\Support\Collection;
-use Laraning\Galaxia\UserInterface\Widgets\Sidebar;
 
 class SidebarLink
 {
@@ -24,28 +23,32 @@ class SidebarLink
     public function withUrl(string $url)
     {
         $this->url = $url;
+
         return $this;
     }
 
     public function withTarget(string $target)
     {
         $this->target = $target;
+
         return $this;
     }
 
     public function withBaseline(string $baseline)
     {
         $this->baseline = $baseline;
+
         return $this;
     }
 
     public function withTitle(string $title)
     {
         $this->title = $title;
+
         return $this;
     }
 
-    public function addChild(SidebarLink $child)
+    public function addChild(self $child)
     {
         $this->children->push($child);
     }
@@ -53,6 +56,7 @@ class SidebarLink
     public function withThumbnail(string $thumbnail)
     {
         $this->thumbnail = $thumbnail;
+
         return $this;
     }
 }

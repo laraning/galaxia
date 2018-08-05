@@ -2,15 +2,13 @@
 
 namespace Laraning\Galaxia\UserInterface\Widgets;
 
-use Laraning\Galaxia\UserInterface\Widgets\BreadCrumbLink;
-
 /**
  * BreadCrumb generator.
  * Generates the breadcrumb giving the full path for the feature route.
  * It uses a "smart" search given the uri that are recorded, since it searches
  * for uri's that are contained in the final path string.
  */
-class BreadCrumb
+class Breadcrumb
 {
     /**
      * Collection with the links to render the breadcrumb.
@@ -68,7 +66,7 @@ class BreadCrumb
         // Add non-links to breadcrumb.
         foreach ($segments as $key => $item) {
             $this->addNonLink(trans('galaxia-translations::breadcrumb.'.$item));
-        };
+        }
 
         return $this->links();
     }

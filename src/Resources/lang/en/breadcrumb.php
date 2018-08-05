@@ -2,5 +2,5 @@
 
 return [
     'galaxia' => 'Home',
-    'demo' => 'Demo'
+    'demo'    => 'Demo',
 ];

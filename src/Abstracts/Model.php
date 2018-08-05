@@ -10,6 +10,6 @@ abstract class Model extends LaravelModel
     {
         $this->guard_name = config('galaxia.database.table.prefix');
         parent::__construct($attributes);
-        $this->table = config('galaxia.database.table.prefix') . '_' . ($this->getTable());
+        $this->table = config('galaxia.database.table.prefix').'_'.($this->getTable());
     }
 }

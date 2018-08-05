@@ -36,7 +36,7 @@ class BaseServiceProvider extends ServiceProvider
         $timestamp = date('Y_m_d_His', time());
         $this->publishes([
             __DIR__.'/../Database/Migrations/create_galaxia_schema.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_galaxia_schema.php",
-        ], 'galaxia-update-schema-latest');
+        ], 'galaxia-create-schema');
     }
 
     protected function publishConfiguration()
@@ -46,8 +46,14 @@ class BaseServiceProvider extends ServiceProvider
             __DIR__.'/../Configuration/galaxia.php' => config_path('galaxia.php'),
         ], 'galaxia-configuration');
 
-        // Merge configuration in case file already exists.
+        // Publish configuration.
+        $this->publishes([
+            __DIR__.'/../Configuration/flame.php' => config_path('flame.php'),
+        ], 'galaxia-flame-configuration');
+
+        // Merge configuration in case file already exists (Galaxia and Flame).
         $this->mergeConfigFrom(__DIR__.'/../Configuration/galaxia.php', 'galaxia');
+        $this->mergeConfigFrom(__DIR__.'/../Configuration/flame.php', 'flame');
     }
 
     protected function loadRoutes()

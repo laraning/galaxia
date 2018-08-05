@@ -1,0 +1,1 @@
+@extends('galaxia-ui::layouts.dashboard')

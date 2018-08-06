@@ -3,8 +3,8 @@
 namespace Laraning\Galaxia\UserInterface\ViewComposers;
 
 use Illuminate\View\View;
-use Laraning\Galaxia\UserInterface\Widgets\NotificationLink;
-use Laraning\Galaxia\UserInterface\Widgets\NotificationList;
+use Laraning\Galaxia\UserInterface\Widgets\Notification\NotificationLink;
+use Laraning\Galaxia\UserInterface\Widgets\Notification\NotificationList;
 
 class NotificationListComposer
 {

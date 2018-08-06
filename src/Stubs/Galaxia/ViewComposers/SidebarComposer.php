@@ -3,7 +3,7 @@
 namespace App\Galaxia\ViewComposers;
 
 use Illuminate\View\View;
-use Laraning\Galaxia\UserInterface\Widgets\Sidebar;
+use Laraning\Galaxia\UserInterface\Widgets\Sidebar\Sidebar;
 
 class SidebarComposer
 {

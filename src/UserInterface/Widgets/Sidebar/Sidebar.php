@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraning\Galaxia\UserInterface\Widgets;
+namespace Laraning\Galaxia\UserInterface\Widgets\Sidebar;
 
 use Illuminate\Support\Collection;
 

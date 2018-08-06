@@ -1,13 +1,7 @@
 <?php
 
-namespace Laraning\Galaxia\UserInterface\Widgets;
+namespace Laraning\Galaxia\UserInterface\Widgets\Breadcrumb;
 
-/**
- * BreadCrumb generator.
- * Generates the breadcrumb giving the full path for the feature route.
- * It uses a "smart" search given the uri that are recorded, since it searches
- * for uri's that are contained in the final path string.
- */
 class Breadcrumb
 {
     /**

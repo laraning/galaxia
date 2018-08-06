@@ -3,7 +3,7 @@
 namespace Laraning\Galaxia\UserInterface\ViewComposers;
 
 use Illuminate\View\View;
-use Laraning\Galaxia\UserInterface\Widgets\BreadCrumb;
+use Laraning\Galaxia\UserInterface\Widgets\Breadcrumb\BreadCrumb;
 
 class BreadcrumbComposer
 {

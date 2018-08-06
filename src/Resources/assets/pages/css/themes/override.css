@@ -1,0 +1,9 @@
+/* All CSS attributes should have !important */
+.page-sidebar a,
+.page-sidebar button {
+  color: white !important;
+}
+
+.icon-thumbnail {
+  color: white !important;
+}

@@ -20,5 +20,7 @@
     <link href="/galaxia/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="/galaxia/pages/css/pages-icons.css" rel="stylesheet" type="text/css">
     <link class="main-stylesheet" href="/galaxia/pages/css/themes/corporate.css" rel="stylesheet" type="text/css" />
+    <link class="main-stylesheet" href="/galaxia/pages/css/themes/custom.css" rel="stylesheet" type="text/css" />
+    <link class="main-stylesheet" href="/galaxia/pages/css/themes/override.css" rel="stylesheet" type="text/css" />
     @stack('galaxia.additional.css')
 </head>

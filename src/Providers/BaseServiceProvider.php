@@ -62,19 +62,19 @@ class BaseServiceProvider extends ServiceProvider
     protected function loadRoutes()
     {
         // Custom routes.
-        if (File::exists(base_path('routes' . DIRECTORY_SEPARATOR . 'galaxia.php'))) {
+        if (File::exists(base_path('routes'.DIRECTORY_SEPARATOR.'galaxia.php'))) {
             Route::group(['middleware' => ['web',
                                        'firewall-blacklist',
                                        'firewall-blockattacks', ]], function ($router) {
-                                           $this->loadRoutesFrom(base_path('routes' . DIRECTORY_SEPARATOR . 'galaxia.php'));
+                                           $this->loadRoutesFrom(base_path('routes'.DIRECTORY_SEPARATOR.'galaxia.php'));
                                        });
-        };
+        }
 
         // System routes. Always loaded.
         Route::group(['middleware' => ['web',
                                    'firewall-blacklist',
                                    'firewall-blockattacks', ]], function ($router) {
-                                       $this->loadRoutesFrom(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . 'system.php');
+                                       $this->loadRoutesFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Routes'.DIRECTORY_SEPARATOR.'system.php');
                                    });
     }
 

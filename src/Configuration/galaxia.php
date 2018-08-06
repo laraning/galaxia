@@ -6,25 +6,30 @@ return [
     'database' => [
         'table' => [
             // What's the prefix you want to have in Galaxia tables? No need to put the underscore.
-            'prefix' => 'galaxia',
-        ],
+            'prefix' => 'galaxia'
+        ]
+    ],
+
+    /*** View parameters  ***/
+    'views' => [
+        'composers' => [
+            'sidebar' => App\Galaxia\ViewComposers\SidebarComposer::class,
+            'breadcrumb' => Laraning\Galaxia\UserInterface\ViewComposers\BreadcrumbComposer::class,
+            'notifications' => Laraning\Galaxia\UserInterface\ViewComposers\NotificationListComposer::class
+        ]
     ],
 
     /*** Widget parameters ***/
     'widgets' => [
-        /* Breadrumb parameters.
-           Please check online documentation on the link:
-            <link here>
-        */
         'breadcrumb' => [
             'prefix' => [
-                'delete' => '',
-            ],
+                'delete-indexes' => 1
+            ]
         ],
     ],
 
+    /*** Authentication Guard  ***/
     'auth' => [
-        // Default guard name to be used for authentication.
         'guard' => 'galaxia',
     ],
 ];

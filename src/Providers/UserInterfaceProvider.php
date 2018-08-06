@@ -16,17 +16,17 @@ class UserInterfaceProvider extends ServiceProvider
     {
         View::composer(
             'galaxia-ui::partials.sidebar.tree',
-            'App\Galaxia\ViewComposers\SidebarComposer'
+            config('galaxia.views.composers.sidebar')
         );
 
         View::composer(
             'galaxia-ui::partials.breadcrumb',
-            'App\Galaxia\ViewComposers\BreadcrumbComposer'
+            config('galaxia.views.composers.breadcrumb')
         );
 
         View::composer(
             'galaxia-ui::partials.notifications.notification-list',
-            'Laraning\Galaxia\UserInterface\ViewComposers\NotificationListComposer'
+            config('galaxia.views.composers.notifications')
         );
     }
 

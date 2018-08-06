@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Galaxia\ViewComposers;
+namespace Laraning\Galaxia\UserInterface\ViewComposers;
 
 use Illuminate\View\View;
 use Laraning\Galaxia\UserInterface\Widgets\BreadCrumb;

@@ -21,6 +21,8 @@ class BaseServiceProvider extends ServiceProvider
 
         $this->publishAssets();
 
+        $this->publishRoutes();
+
         $this->publishConfiguration();
 
         $this->publishMigrations();
@@ -59,17 +61,21 @@ class BaseServiceProvider extends ServiceProvider
 
     protected function loadRoutes()
     {
-        Route::group(['middleware' => ['web',
+        // Custom routes.
+        if (File::exists(base_path('routes' . DIRECTORY_SEPARATOR . 'galaxia.php'))) {
+            Route::group(['middleware' => ['web',
                                        'firewall-blacklist',
                                        'firewall-blockattacks', ]], function ($router) {
-                                           $this->loadRoutesFrom(__DIR__.'/../Routes/default.php');
+                                           $this->loadRoutesFrom(base_path('routes' . DIRECTORY_SEPARATOR . 'galaxia.php'));
                                        });
+        };
 
+        // System routes. Always loaded.
         Route::group(['middleware' => ['web',
-                                       'firewall-blacklist',
-                                       'firewall-blockattacks', ]], function ($router) {
-                                           $this->loadRoutesFrom(__DIR__.'/../Routes/custom.php');
-                                       });
+                                   'firewall-blacklist',
+                                   'firewall-blockattacks', ]], function ($router) {
+                                       $this->loadRoutesFrom(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Routes' . DIRECTORY_SEPARATOR . 'system.php');
+                                   });
     }
 
     protected function loadViews()
@@ -98,6 +104,13 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Stubs/Galaxia' => app_path('Galaxia'),
         ], 'galaxia-framework-assets');
+    }
+
+    protected function publishRoutes()
+    {
+        $this->publishes([
+            __DIR__.'/../Routes' => base_path('routes'),
+        ], 'galaxia-routes');
     }
 
     protected function loadTranslations()

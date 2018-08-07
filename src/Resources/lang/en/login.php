@@ -6,7 +6,7 @@ return [
         'baseline' => 'In case you do not have an account please contact support.',
     ],
     'form' => [
-        'title'                => 'Sign in into ' . config('app.name') . ' wonderful admin',
+        'title'                => 'Sign in into '.config('app.name').' wonderful admin',
         'login'                => 'Login',
         'login_placeholder'    => 'Your email',
         'password'             => 'Password',

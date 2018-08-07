@@ -2,8 +2,8 @@
 
 namespace Laraning\Galaxia\Providers;
 
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class UserInterfaceProvider extends ServiceProvider

@@ -1,8 +1,7 @@
 <?php
 
-namespace Laraning\Galaxia\Features\Login\Controllers;
+namespace Laraning\Galaxia\Features\Test\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class FeatureController extends Controller
@@ -12,12 +11,8 @@ class FeatureController extends Controller
         // Add your middleware, if needed.
     }
 
-    public function show()
+    public function index()
     {
         return flame();
-    }
-
-    public function login(Request $request)
-    {
     }
 }

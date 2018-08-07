@@ -103,7 +103,7 @@ class BaseServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../Stubs/Galaxia' => app_path('Galaxia'),
-        ], 'galaxia-framework-assets');
+        ], 'galaxia-features');
     }
 
     protected function publishRoutes()
@@ -115,6 +115,6 @@ class BaseServiceProvider extends ServiceProvider
 
     protected function loadTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'galaxia-translations');
+        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'galaxia-text');
     }
 }

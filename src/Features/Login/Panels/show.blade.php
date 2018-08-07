@@ -1,1 +1,1 @@
-@extends('galaxia-ui::layouts.dashboard')
+@extends('galaxia-ui::layouts.login')

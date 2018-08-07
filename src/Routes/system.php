@@ -4,4 +4,8 @@
 Route::get('galaxia/xhttp-get/{component}/{action/}{param1?}/{param2?}', 'Laraning\Galaxia\Controllers\XhttpGet@bridge')
      ->name('galaxia.httpget');
 
-Route::get('galaxia/login', 'Laraning\Galaxia\Features\Login\Controllers\FeatureController@show')->name('galaxia.login.show');
+Route::get('galaxia/login', 'Laraning\Galaxia\Features\Login\Controllers\FeatureController@show')
+     ->name('galaxia.login.show');
+
+Route::post('galaxia/login', 'Laraning\Galaxia\Features\Login\Controllers\FeatureController@login')
+     ->name('galaxia.login.do');

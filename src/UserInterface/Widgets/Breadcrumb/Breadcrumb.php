@@ -59,7 +59,7 @@ class Breadcrumb
 
         // Add non-links to breadcrumb.
         foreach ($segments as $key => $item) {
-            $this->addNonLink(trans('galaxia-translations::breadcrumb.'.$item));
+            $this->addNonLink(trans('galaxia-text::breadcrumb.'.$item));
         }
 
         return $this->links();

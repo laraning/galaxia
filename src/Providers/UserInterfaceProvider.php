@@ -3,6 +3,7 @@
 namespace Laraning\Galaxia\Providers;
 
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class UserInterfaceProvider extends ServiceProvider
@@ -37,6 +38,16 @@ class UserInterfaceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->bootBladeDirectives();
+    }
+
+    protected function bootBladeDirectives()
+    {
+        Blade::directive(
+            'glxinput',
+            function ($expression) {
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.forms.input.widget', $expression))->render() ?>";
+            }
+        );
     }
 }

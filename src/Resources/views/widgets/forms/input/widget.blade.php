@@ -1,6 +1,13 @@
 {{--
-
 Input widget - Create a HTML input (text, password, not checkbox neither radio).
+
+Example:
+@glxinput(['type' => 'password',
+           'icon_color' => 'text-success',
+           'icon' => 'bath',
+           'title' => 'test',
+           'append' => 'CHF',
+           'name' => 'linear'])
 
 Parameters:
 append - (string) Text to append at the end of the field.

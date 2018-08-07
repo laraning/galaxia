@@ -28,6 +28,15 @@ return [
         ],
     ],
 
+    'social' => [
+        'facebook' => '',
+        'instagram' => '',
+        'linkedin' => '',
+        'twitter' => '',
+        'reddit' => '',
+        'digg' => ''
+    ],
+
     /*** Authentication Guard  ***/
     'auth' => [
         'guard' => 'galaxia',

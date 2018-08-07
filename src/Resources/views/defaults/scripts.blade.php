@@ -10,6 +10,7 @@
 <script src="/galaxia/assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
 <script src="/galaxia/assets/plugins/jquery-actual/jquery.actual.min.js"></script>
 <script src="/galaxia/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="/galaxia/assets/extra/retina/retina.js"></script>
 <script type="text/javascript" src="/galaxia/assets/plugins/classie/classie.js"></script>
 <!-- END VENDOR JS -->
 <!-- BEGIN CORE TEMPLATE JS -->

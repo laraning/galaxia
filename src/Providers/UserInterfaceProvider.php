@@ -49,5 +49,56 @@ class UserInterfaceProvider extends ServiceProvider
                 return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.forms.input.widget', $expression))->render() ?>";
             }
         );
+
+        Blade::directive(
+            'glxfa',
+            function ($arguments) {
+                $arguments = str_replace('\'', '', $arguments);
+                $args = explode(',', $arguments);
+                $class = count($args >= 2) ? $args[1]:
+                                             null;
+
+                return "<i class='fa fa-". $args[0] . " ". $class . "'></i>";
+            }
+        );
+
+        Blade::directive(
+            'glxlogo',
+            function ($arguments) {
+                $arguments = str_replace('\'', '', $arguments);
+                $args = explode(',', $arguments);
+                $backgrnd = $args[0];
+                $file = $args[1];
+                return "<?php echo '/galaxia/custom/logos/" . $backgrnd . "/" . $file . ".jpg' ?>";
+            }
+        );
+
+        Blade::directive(
+            'glxinput',
+            function ($expression) {
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.forms.input.widget', $expression))->render() ?>";
+            }
+        );
+
+        Blade::directive(
+            'glxcardstd',
+            function ($expression) {
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.widget', ['title' => $expression ?? null]))->render() ?>";
+            }
+        );
+
+        Blade::directive(
+            'endglxcardstd',
+            function () {
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.footer'))->render() ?>";
+            }
+        );
+
+        Blade::directive(
+            'glxcardheader',
+            function ($expression) {
+                    return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.header', ['title' => $expression ?? null]))->render() ?>";
+            }
+        );
     }
 }

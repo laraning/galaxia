@@ -6,5 +6,5 @@ function package_path($path)
             'vendor' :
             'packages';
 
-    return base_path("{$base}/laraning/galaxia/src/" . $path);
-};
+    return base_path("{$base}/laraning/galaxia/src/".$path);
+}

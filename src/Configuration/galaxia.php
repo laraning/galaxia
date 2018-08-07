@@ -28,6 +28,7 @@ return [
         ],
     ],
 
+    /*** Social links ***/
     'social' => [
         'facebook'  => '',
         'instagram' => '',

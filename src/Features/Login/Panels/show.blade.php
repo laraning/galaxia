@@ -32,8 +32,14 @@
                 <p>
                     <small>
                     Copyright © {{ date('Y') }}, {{ config('app.name') }} all rights reserved.<br/>
-                    <div class="no-padding m-t-20">
-                        <a href="#">@glxfa('facebook', 'size-big text-primary')</a>
+                    In case you don't have an account please contact our support.
+                    <div class="m-t-20">
+                        @if(!empty(config('galaxia.social.facebook'))) <a href="{{ config('galaxia.social.facebook') }}" target="_blank">@glxfa('facebook', 'size-big text-primary')</a>&nbsp; @endif
+                        @if(!empty(config('galaxia.social.instagram'))) <a href="{{ config('galaxia.social.instagram') }}" target="_blank">@glxfa('instagram', 'size-big text-primary')</a>&nbsp; @endif
+                        @if(!empty(config('galaxia.social.linkedin'))) <a href="{{ config('galaxia.social.linkedin') }}" target="_blank">@glxfa('linkedin', 'size-big text-primary')</a>&nbsp; @endif
+                        @if(!empty(config('galaxia.social.twitter'))) <a href="{{ config('galaxia.social.twitter') }}" target="_blank">@glxfa('twitter', 'size-big text-primary')</a>&nbsp; @endif
+                        @if(!empty(config('galaxia.social.reddit'))) <a href="{{ config('galaxia.social.reddit') }}" target="_blank">@glxfa('reddit', 'size-big text-primary')</a>&nbsp; @endif
+                        @if(!empty(config('galaxia.social.digg'))) <a href="{{ config('galaxia.social.digg') }}" target="_blank">@glxfa('digg', 'size-big text-primary')</a>&nbsp; @endif
                     </div>
                     </small>
                 </p>

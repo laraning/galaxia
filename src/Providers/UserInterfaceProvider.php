@@ -55,10 +55,10 @@ class UserInterfaceProvider extends ServiceProvider
             function ($arguments) {
                 $arguments = str_replace('\'', '', $arguments);
                 $args = explode(',', $arguments);
-                $class = count($args >= 2) ? $args[1]:
+                $class = count($args >= 2) ? $args[1] :
                                              null;
 
-                return "<i class='fa fa-". $args[0] . " ". $class . "'></i>";
+                return "<i class='fa fa-".$args[0].' '.$class."'></i>";
             }
         );
 
@@ -69,7 +69,8 @@ class UserInterfaceProvider extends ServiceProvider
                 $args = explode(',', $arguments);
                 $backgrnd = $args[0];
                 $file = $args[1];
-                return "<?php echo '/galaxia/custom/logos/" . $backgrnd . "/" . $file . ".jpg' ?>";
+
+                return "<?php echo '/galaxia/custom/logos/".$backgrnd.'/'.$file.".jpg' ?>";
             }
         );
 
@@ -97,7 +98,7 @@ class UserInterfaceProvider extends ServiceProvider
         Blade::directive(
             'glxcardheader',
             function ($expression) {
-                    return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.header', ['title' => $expression ?? null]))->render() ?>";
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.header', ['title' => $expression ?? null]))->render() ?>";
             }
         );
     }

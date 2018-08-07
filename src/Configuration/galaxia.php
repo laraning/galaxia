@@ -29,12 +29,12 @@ return [
     ],
 
     'social' => [
-        'facebook' => '',
+        'facebook'  => '',
         'instagram' => '',
-        'linkedin' => '',
-        'twitter' => '',
-        'reddit' => '',
-        'digg' => ''
+        'linkedin'  => '',
+        'twitter'   => '',
+        'reddit'    => '',
+        'digg'      => '',
     ],
 
     /*** Authentication Guard  ***/

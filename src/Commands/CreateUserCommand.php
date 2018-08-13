@@ -41,6 +41,7 @@ class CreateUserCommand extends Command
     {
         $this->info('');
         $this->info('');
+        $this->info('*** Galaxia User creation ***');
 
         // Database connectivity?
         try {
@@ -100,8 +101,11 @@ class CreateUserCommand extends Command
             $user->givePermissionTo('access');
         }
 
+        $this->info('');
+        $this->info('');
+
         if ($user) {
-            $this->info('User successfully added!');
+            $this->info('User successfully created! Now do something amazing!');
         }
 
         $this->info('');

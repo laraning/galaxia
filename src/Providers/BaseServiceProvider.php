@@ -41,8 +41,6 @@ class BaseServiceProvider extends ServiceProvider
 
     public function register()
     {
-        app('router')->aliasMiddleware('firewall-blacklist', \PragmaRX\Firewall\Middleware\FirewallBlacklist::class);
-        app('router')->aliasMiddleware('firewall-blockattacks', \PragmaRX\Firewall\Middleware\BlockAttacks::class);
         app('router')->aliasMiddleware('galaxia-authenticate', \Laraning\Galaxia\Middleware\Authenticate::class);
         app('router')->aliasMiddleware('galaxia-permission', \Spatie\Permission\Middlewares\PermissionMiddleware::class);
         app('router')->aliasMiddleware('galaxia-role', \Spatie\Permission\Middlewares\RoleMiddleware::class);
@@ -76,7 +74,7 @@ class BaseServiceProvider extends ServiceProvider
     {
 
         // System routes.
-        Route::middleware(['web', 'firewall-blacklist', 'firewall-blockattacks'])
+        Route::middleware(['web'])
              ->group(__DIR__.DIRECTORY_SEPARATOR.
                      '..'.
                      DIRECTORY_SEPARATOR.

@@ -13,7 +13,6 @@
         "php": "^7.1",
         "laraning/boost": "^1.0",
         "laraning/flame": "^1.0",
-        "pragmarx/firewall": "^2.2",
         "doctrine/dbal": "^2.7",
         "spatie/laravel-permission": "^2.13"
     },

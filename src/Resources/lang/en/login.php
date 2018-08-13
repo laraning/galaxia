@@ -6,7 +6,11 @@ return [
         'baseline' => 'In case you do not have an account please contact support.',
     ],
     'form' => [
+<<<<<<< HEAD
         'title'                => 'Welcome to ' . config('app.name') . '!<br/>Please sign in using the credentials below',
+=======
+        'title'                => 'Sign in into '.config('app.name').' wonderful admin',
+>>>>>>> 3ca3cb74e66edaedbed4ad808647138180af127e
         'login'                => 'Login',
         'login_placeholder'    => 'Your email',
         'password'             => 'Password',

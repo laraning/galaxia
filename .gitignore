@@ -20,3 +20,4 @@ Homestead.json
 .rocketeer/
 
 style/sass
+src/Resources/lang/en/login.php

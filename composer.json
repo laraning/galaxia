@@ -27,6 +27,11 @@
             "src/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Laraning\\GalaxiaTests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [

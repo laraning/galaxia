@@ -36,22 +36,16 @@
             ]
         }
     },
-    "scripts": {
-        "post-root-package-install": [
-            "@php artisan vendor:publish --provider=Laraning\\Galaxia\\Providers\\BaseServiceProvider",
-            "@php artisan artisan vendor:publish --provider=\"Spatie\\Permission\\PermissionServiceProvider\" --tag=\"migrations\""
-        ]
-    },
     "config": {
-        "preferred-install": "dev",
+        "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Laraning",
-            "email": "bruno.falcao@laraning.com"
+            "name": "Galaxia",
+            "email": "bruno.falcao@galaxia.laraning.com"
         }
     ],
     "minimum-stability": "dev"

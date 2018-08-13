@@ -2,10 +2,10 @@
 
 namespace App\Galaxia\Features\Login\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Galaxia\Features\Login\Requests\LoginRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FeatureController extends Controller
 {

@@ -3,8 +3,8 @@
 namespace Laraning\Galaxia\Commands;
 
 use Illuminate\Console\Command;
-use Laraning\Galaxia\Models\User;
 use Illuminate\Support\Facades\DB;
+use Laraning\Galaxia\Models\User;
 
 class CreateUserCommand extends Command
 {
@@ -47,6 +47,7 @@ class CreateUserCommand extends Command
             DB::select(DB::raw('select version()'));
         } catch (\Exception $e) {
             $this->error('Ups! Looks like you don\'t have database connectivity. Check your database connection parameters please.');
+
             return;
         }
 
@@ -73,7 +74,7 @@ class CreateUserCommand extends Command
             if (User::where('email', $email)->exists()) {
                 $this->error('This email already exists. Please try again.');
                 $out = false;
-            };
+            }
         }
 
         $out = false;
@@ -84,13 +85,13 @@ class CreateUserCommand extends Command
                 $out = true;
             } else {
                 $this->error('Please enter at least 6 characters. Please try again.');
-            };
-        };
+            }
+        }
 
         // Create and assign minimal permissions.
         $user = User::create(['name'     => $name,
                               'email'    => $email,
-                              'password' => bcrypt($password)]);
+                              'password' => bcrypt($password), ]);
 
         // Admin?
         if ($this->option('admin')) {
@@ -101,7 +102,7 @@ class CreateUserCommand extends Command
 
         if ($user) {
             $this->info('User successfully added!');
-        };
+        }
 
         $this->info('');
         $this->info('');

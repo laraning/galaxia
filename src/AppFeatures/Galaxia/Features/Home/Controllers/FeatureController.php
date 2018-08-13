@@ -3,7 +3,6 @@
 namespace App\Galaxia\Features\Home\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class FeatureController extends Controller
 {

@@ -48,8 +48,8 @@ class DeployAuthCommand extends Command
         if ($this->confirm('This operation will override your auth.php file. Do you want to continue?')) {
             if (File::copy(package_path('Configuration/auth.php'), base_path('config/auth.php'))) {
                 $this->info('File copied.');
-            };
-        };
+            }
+        }
 
         $this->info('');
         $this->info('');

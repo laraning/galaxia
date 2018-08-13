@@ -11,7 +11,7 @@ class Authenticate
     {
         if (!Auth::guard(glxguard())->check()) {
             return redirect()->intended(route('galaxia.login.show'));
-        };
+        }
 
         return $next($request);
     }

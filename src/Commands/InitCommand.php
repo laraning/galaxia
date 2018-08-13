@@ -3,11 +3,11 @@
 namespace Laraning\Galaxia\Commands;
 
 use Illuminate\Console\Command;
-use Laraning\Galaxia\Models\User;
-use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Laraning\Galaxia\Models\User;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class InitCommand extends Command
 {
@@ -52,27 +52,28 @@ class InitCommand extends Command
             $this->info('-- DB connectivity test: OK --');
         } catch (\Exception $e) {
             $this->error('Ups! Looks like you don\'t have database connectivity. Check your database connection parameters please.');
+
             return;
         }
 
         // Verify/create permissions and roles (permission=access, role=admin) for Galaxia guard.
         if (!Permission::where('guard_name', 'galaxia')
                      ->where('name', 'access')->exists()) {
-            Permission::create(['name' => 'access', "guard_name" => glxguard()]);
+            Permission::create(['name' => 'access', 'guard_name' => glxguard()]);
             $this->info('-- Galaxia permission \'access\': OK --');
-        };
+        }
 
         if (!Role::where('guard_name', 'galaxia')
                      ->where('name', 'admin')->exists()) {
-            Role::create(['name' => 'admin', "guard_name" => glxguard()]);
+            Role::create(['name' => 'admin', 'guard_name' => glxguard()]);
             $this->info('-- Galaxia role \'admin\': OK --');
-        };
+        }
 
         // Assign default access permission to admin role.
         $role = Role::findByName('admin', glxguard());
         if (!$role->hasPermissionTo('access', glxguard())) {
             $role->givePermissionTo('access');
-        };
+        }
 
         // Verify if the configured authentication gate exists.
         try {
@@ -80,8 +81,9 @@ class InitCommand extends Command
             $this->info('-- Auth configuration check: OK --');
         } catch (\Exception $e) {
             $this->error('Ups! Looks like the current registered Galaxia guard is not configured in your auth.php config file. Please check it out.');
+
             return;
-        };
+        }
 
         $this->info('');
         $this->info('');

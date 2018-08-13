@@ -15,7 +15,6 @@
         "laraning/flame": "^1.0",
         "pragmarx/firewall": "^2.2",
         "doctrine/dbal": "^2.7",
-        "genealabs/laravel-model-caching": "^0.2",
         "spatie/laravel-permission": "^2.13"
     },
     "require-dev": {
@@ -36,6 +35,17 @@
                 "Laraning\\Galaxia\\Providers\\UserInterfaceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php artisan vendor:publish --provider=Laraning\\Galaxia\\Providers\\BaseServiceProvider",
+            "@php artisan artisan vendor:publish --provider=\"Spatie\\Permission\\PermissionServiceProvider\" --tag=\"migrations\""
+        ],
+    },
+    "config": {
+        "preferred-install": "dev",
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "license": "MIT",
     "authors": [

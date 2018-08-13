@@ -3,12 +3,12 @@
 namespace Laraning\Galaxia\Commands;
 
 use Illuminate\Console\Command;
-use Laraning\Galaxia\Models\User;
-use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Laraning\Galaxia\Models\User;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class InitCommand extends Command
 {
@@ -53,16 +53,18 @@ class InitCommand extends Command
             $this->info('-- DB connectivity check: OK --');
         } catch (\Exception $e) {
             $this->error('Ups! Looks like you don\'t have database connectivity. Check your database connection parameters please.');
+
             return;
         }
 
         // Spatie permissions installed?
         if (!class_exists('Spatie\Permission\Models\Permission')) {
             $this->error('Spatie Permissions check: ERROR! Your Spatie permissions package is not installed. Please check this package installation.');
+
             return;
         } else {
             $this->info('-- Spatie permissions classes check: OK --');
-        };
+        }
 
         if (!Schema::hasTable(config('permission.table_names.roles')) ||
            !Schema::hasTable(config('permission.table_names.permissions')) ||
@@ -70,6 +72,7 @@ class InitCommand extends Command
            !Schema::hasTable(config('permission.table_names.model_has_roles')) ||
            !Schema::hasTable(config('permission.table_names.role_has_permissions'))) {
             $this->error('Spatie permission classes check: ERROR! Your Spatie permissions package don\'t have tables. Did you run the package migration?');
+
             return;
         } else {
             $this->info('-- Spatie permission classes check: OK --');
@@ -100,6 +103,7 @@ class InitCommand extends Command
             $this->info('-- Auth configuration check: OK --');
         } catch (\Exception $e) {
             $this->error('Auth configuration check: ERROR! Galaxia auth gate don\'t exist in your auth.php configuration file. Please run galaxia:deploy-auth command.');
+
             return;
         }
 

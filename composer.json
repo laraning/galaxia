@@ -37,7 +37,7 @@
         }
     },
     "scripts": {
-        "post-create-project-cmd": [
+        "post-update-cmd": [
             "@php artisan vendor:publish --provider=Laraning\\Galaxia\\Providers\\BaseServiceProvider",
             "@php artisan artisan vendor:publish --provider=\"Spatie\\Permission\\PermissionServiceProvider\" --tag=\"migrations\""
         ]

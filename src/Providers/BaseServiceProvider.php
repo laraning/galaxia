@@ -17,6 +17,8 @@ class BaseServiceProvider extends ServiceProvider
 
         $this->loadViews();
 
+        $this->loadCommands();
+
         $this->loadTranslations();
 
         $this->publishAssets();
@@ -28,10 +30,22 @@ class BaseServiceProvider extends ServiceProvider
         $this->publishMigrations();
     }
 
+    public function loadCommands()
+    {
+        $this->commands([
+            \Laraning\Galaxia\Commands\CreateUserCommand::class,
+            \Laraning\Galaxia\Commands\InitCommand::class,
+            \Laraning\Galaxia\Commands\GiveAccessCommand::class,
+        ]);
+    }
+
     public function register()
     {
         app('router')->aliasMiddleware('firewall-blacklist', \PragmaRX\Firewall\Middleware\FirewallBlacklist::class);
         app('router')->aliasMiddleware('firewall-blockattacks', \PragmaRX\Firewall\Middleware\BlockAttacks::class);
+        app('router')->aliasMiddleware('galaxia-authenticate', \Laraning\Galaxia\Middleware\Authenticate::class);
+        app('router')->aliasMiddleware('galaxia-permission', \Spatie\Permission\Middlewares\PermissionMiddleware::class);
+        app('router')->aliasMiddleware('galaxia-role', \Spatie\Permission\Middlewares\RoleMiddleware::class);
     }
 
     public function publishMigrations()
@@ -56,33 +70,30 @@ class BaseServiceProvider extends ServiceProvider
 
         // Merge configuration in case file already exists (Galaxia and Flame).
         $this->mergeConfigFrom(__DIR__.'/../Configuration/galaxia.php', 'galaxia');
-        $this->mergeConfigFrom(__DIR__.'/../Configuration/flame.php', 'flame');
     }
 
     protected function loadRoutes()
     {
-        // Custom routes.
-        if (File::exists(base_path('routes'.DIRECTORY_SEPARATOR.'galaxia.php'))) {
-            Route::group(['middleware' => ['web',
-                                       'firewall-blacklist',
-                                       'firewall-blockattacks', ]], function ($router) {
-                                           $this->loadRoutesFrom(base_path('routes'.DIRECTORY_SEPARATOR.'galaxia.php'));
-                                       });
-        }
 
-        // System routes. Always loaded.
-        Route::group(['middleware' => ['web',
-                                   'firewall-blacklist',
-                                   'firewall-blockattacks', ]], function ($router) {
-                                       $this->loadRoutesFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Routes'.DIRECTORY_SEPARATOR.'system.php');
-                                   });
+        // System routes.
+        Route::middleware(['web', 'firewall-blacklist', 'firewall-blockattacks'])
+             ->group(__DIR__.DIRECTORY_SEPARATOR.
+                     '..'.
+                     DIRECTORY_SEPARATOR.
+                     'Routes'.
+                     DIRECTORY_SEPARATOR.
+                     'galaxia.php');
     }
 
     protected function loadViews()
     {
         // Identify vendor/packages path.
-        $base = File::exists(base_path('vendor'.DIRECTORY_SEPARATOR.'laraning'.DIRECTORY_SEPARATOR.'galaxia')) ?
-                'vendor' : 'packages';
+        $base = File::exists(base_path('vendor'.
+                                       DIRECTORY_SEPARATOR.
+                                       'laraning'.
+                                       DIRECTORY_SEPARATOR.
+                                       'galaxia')) ?
+                                       'vendor' : 'packages';
 
         $this->loadViewsFrom(
             base_path($base.
@@ -102,8 +113,8 @@ class BaseServiceProvider extends ServiceProvider
         ], 'galaxia-ui-assets');
 
         $this->publishes([
-            __DIR__.'/../Stubs/Galaxia' => app_path('Galaxia'),
-        ], 'galaxia-features');
+            __DIR__.'/../AppFeatures/Galaxia' => app_path('Galaxia'),
+        ], 'galaxia-app-features');
     }
 
     protected function publishRoutes()

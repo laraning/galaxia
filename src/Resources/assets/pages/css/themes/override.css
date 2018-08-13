@@ -1,1 +1,8 @@
 /* All CSS attributes should have !important */
+
+.form-control-error {
+  border-color: red !important;
+  outline: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

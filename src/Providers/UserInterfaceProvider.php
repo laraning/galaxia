@@ -82,6 +82,13 @@ class UserInterfaceProvider extends ServiceProvider
         );
 
         Blade::directive(
+            'glxcheckbox',
+            function ($expression) {
+                return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.forms.checkbox.widget', $expression))->render() ?>";
+            }
+        );
+
+        Blade::directive(
             'glxcardstd',
             function ($expression) {
                 return "<?php echo (new \\Laraning\\Flame\\Blade\\Directives\\Component('galaxia-ui::widgets.cards.standard.widget', ['title' => $expression ?? null]))->render() ?>";

@@ -1,5 +1,5 @@
 {{--
-Input widget - Create a HTML input (text, password, not checkbox neither radio).
+Input widget - Create a HTML input (text, password, hidden, not checkbox neither radio).
 
 Example:
 @glxinput(['type' => 'password',
@@ -12,12 +12,13 @@ Example:
 Parameters:
 append - (string) Text to append at the end of the field.
 required - (boolean) Shows a star (asterisk) at the end of the field.
-disabled - (boolean) Puts the field disabled.
+disabled - (boolean) Disables the field.
 title - (string) Field title.
 name - (string, required) The field name.
 icon - (string class) Font Awesome class icon.
 icon_color - (string class) Color class for the font awesome icon.
 type - (string) text or password.
+value - (string) Input text value.
  --}}
 
 @include('galaxia-ui::widgets.forms.input.head')
@@ -34,6 +35,8 @@ type - (string) text or password.
     <label>{{ $title }} @isset($icon) <i class="fa fa-{{ $icon }} {{ $icon_color ?? 'text-primary' }} m-l-5"></i> @endisset</label>
     <input class="form-control"
            type="{{ $type ?? 'text' }}"
+           name="{{ $name }}"
+           value="{{ $value ?? null }}"
            @isset($disabled) disabled @endisset>
 </div>
 @isset($append)

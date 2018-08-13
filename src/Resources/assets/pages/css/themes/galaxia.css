@@ -982,7 +982,7 @@ body {
     font-size: 14px;
     vertical-align: middle;
     line-height: 12px;
-    font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
     .header .search-link i {
       margin-right: 15px;
       font-size: 16px;
@@ -1449,7 +1449,7 @@ body.sidebar-visible .page-sidebar .sidebar-header .sidebar-header-controls {
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.27, 0.99);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000px;
-  font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1833,7 +1833,7 @@ html {
 
 body {
   color: #575757;
-  font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0.01em;
@@ -1853,7 +1853,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2366,7 +2366,7 @@ hr {
   font-family: Georgia !important; }
 
 .font-heading {
-  font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
 
 /* Wells
 ------------------------------------
@@ -3155,7 +3155,7 @@ Misc buttons
 */
 .badge {
   text-shadow: none;
-  font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   background-color: #e1e1e1;
   font-size: 11px;
@@ -8236,7 +8236,7 @@ Events / .event-container
         width: 69px;
         text-align: center;
         white-space: nowrap;
-        font-family: wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
         .calendar .calendar-header .years .year > a {
           color: rgba(0, 0, 0, 0.5);
           position: relative; }
@@ -12124,5 +12124,14 @@ Main components
   outline: 0 !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
+
+.size-big {
+  font-size: 1.1rem !important; }
+
+input[type=checkbox] {
+  position: absolute !important; }
+
+a {
+  font-size: 13px; }
 
 /*# sourceMappingURL=galaxia.css.map */

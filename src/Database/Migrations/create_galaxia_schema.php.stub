@@ -13,7 +13,7 @@ class CreateGalaxiaSchema extends Migration
      */
     public function up()
     {
-        Schema::create(config('galaxia.database.table.prefix') . '_notifications', function (Blueprint $table) {
+        Schema::create(glxtable('notifications'), function (Blueprint $table) {
             $table->uuid('id');
 
             $table->integer('user_id')
@@ -61,6 +61,6 @@ class CreateGalaxiaSchema extends Migration
      */
     public function down()
     {
-        Schema::drop('notifications');
+        Schema::drop(glxtable('notifications'));
     }
 }

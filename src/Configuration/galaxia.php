@@ -30,12 +30,12 @@ return [
 
     /*** Social links ***/
     'social' => [
-        'facebook'  => '',
-        'instagram' => '',
-        'linkedin'  => '',
-        'twitter'   => '',
-        'reddit'    => '',
-        'digg'      => '',
+        'facebook'  => 'a',
+        'instagram' => 'b',
+        'linkedin'  => 'c',
+        'twitter'   => 'd',
+        'reddit'    => 'e',
+        'digg'      => 'f',
     ],
 
     /*** Authentication Guard  ***/

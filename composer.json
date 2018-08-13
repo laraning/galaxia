@@ -40,7 +40,7 @@
         "post-create-project-cmd": [
             "@php artisan vendor:publish --provider=Laraning\\Galaxia\\Providers\\BaseServiceProvider",
             "@php artisan artisan vendor:publish --provider=\"Spatie\\Permission\\PermissionServiceProvider\" --tag=\"migrations\""
-        ],
+        ]
     },
     "config": {
         "preferred-install": "dev",

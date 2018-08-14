@@ -86,13 +86,13 @@ class InitCommand extends Command
         }
 
         if (!Role::where('guard_name', 'galaxia')
-                     ->where('name', 'admin')->exists()) {
-            Role::create(['name' => 'admin', 'guard_name' => glxguard()]);
+                     ->where('name', 'galaxia-admin')->exists()) {
+            Role::create(['name' => 'galaxia-admin', 'guard_name' => glxguard()]);
             $this->info('-- Galaxia role \'admin\' check: OK --');
         }
 
         // Assign default access permission to admin role.
-        $role = Role::findByName('admin', glxguard());
+        $role = Role::findByName('galaxia-admin', glxguard());
         if (!$role->hasPermissionTo('access', glxguard())) {
             $role->givePermissionTo('access');
         }

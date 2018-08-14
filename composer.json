@@ -36,7 +36,8 @@
         "laravel": {
             "providers": [
                 "Laraning\\Galaxia\\Providers\\BaseServiceProvider",
-                "Laraning\\Galaxia\\Providers\\UserInterfaceProvider"
+                "Laraning\\Galaxia\\Providers\\UserInterfaceProvider",
+                "Laraning\\Galaxia\\Providers\\EventServiceProvider"
             ]
         }
     },

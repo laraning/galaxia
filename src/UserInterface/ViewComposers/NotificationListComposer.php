@@ -3,6 +3,7 @@
 namespace Laraning\Galaxia\UserInterface\ViewComposers;
 
 use Illuminate\View\View;
+use Laraning\Galaxia\Models\Notification;
 use Laraning\Galaxia\UserInterface\Widgets\Notification\NotificationLink;
 use Laraning\Galaxia\UserInterface\Widgets\Notification\NotificationList;
 
@@ -21,7 +22,12 @@ class NotificationListComposer
      */
     public function compose(View $view)
     {
+        // Verify if this user have notifications.
+        Notification::fromThisUser();
+
+        //dd(Notification::fromThisUser()->toSql());
         $notifications = new NotificationList();
+        /*
 
         $link1 = new NotificationLink();
         $link1->title = 'My title';
@@ -33,7 +39,7 @@ class NotificationListComposer
 
         $notifications->add($link1);
 
-        //dd('inside');
+        */
         $view->with('notifications', $notifications->list())
              ->with('footer', $notifications->footer());
     }

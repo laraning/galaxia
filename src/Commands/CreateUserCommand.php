@@ -96,7 +96,7 @@ class CreateUserCommand extends Command
 
         // Admin?
         if ($this->option('admin')) {
-            $user->assignRole('admin');
+            $user->assignRole('galaxia-admin');
         } else {
             $user->givePermissionTo('access');
         }

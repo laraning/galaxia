@@ -1,7 +1,7 @@
 <div class="sidebar-menu">
     <!-- BEGIN SIDEBAR MENU ITEMS-->
     <ul class="menu-items">
-        @foreach($items->getTree() as $item)
+        @foreach($sidebar->getTree() as $item)
             @if($loop->iteration == 1)
                 @include('galaxia-ui::partials.sidebar.item', ['first' => true, 'item' => $item, 'close' => false])
             @else

@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 class Sidebar
 {
     protected $tree;
+    protected $link;
 
     public function __construct()
     {

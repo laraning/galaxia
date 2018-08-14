@@ -2,10 +2,8 @@
 
 namespace Laraning\Galaxia\Listeners;
 
-use Laraning\Galaxia\Factories\Galaxia;
-use Illuminate\Queue\InteractsWithQueue;
 use Laraning\Galaxia\Events\UserNotified;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Laraning\Galaxia\Factories\Galaxia;
 
 class NotifyUser
 {

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notification
 {
-    function __construct()
+    public function __construct()
     {
     }
 

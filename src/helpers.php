@@ -14,7 +14,7 @@ if (!function_exists('package_path')) {
 if (!function_exists('glxtable')) {
     function glxtable($table)
     {
-        return config('galaxia.database.table.prefix') . '_' . $table;
+        return config('galaxia.database.table.prefix').'_'.$table;
     }
 }
 

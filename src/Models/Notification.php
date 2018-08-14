@@ -13,5 +13,6 @@ class Notification extends Model
     {
         return $query->where($this->table.'.user_id', glxuser()->id);
     }
+
     /* /Local Scopes **/
 }

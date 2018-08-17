@@ -36,7 +36,7 @@ class BaseServiceProvider extends ServiceProvider
             \Laraning\Galaxia\Commands\CreateUserCommand::class,
             \Laraning\Galaxia\Commands\InitCommand::class,
             \Laraning\Galaxia\Commands\GiveAccessCommand::class,
-            \Laraning\Galaxia\Commands\DeployAuthCommand::class,
+            \Laraning\Galaxia\Commands\DeployAuthCommand::class
         ]);
     }
 

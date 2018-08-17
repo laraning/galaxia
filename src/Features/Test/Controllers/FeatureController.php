@@ -13,6 +13,11 @@ class FeatureController extends Controller
 
     public function index()
     {
+        $composer = json_decode(file_get_contents(base_path('composer.json')));
+
+        dd($composer);
+
+
         return flame();
     }
 }

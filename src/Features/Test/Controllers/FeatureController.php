@@ -17,7 +17,6 @@ class FeatureController extends Controller
 
         dd($composer);
 
-
         return flame();
     }
 }

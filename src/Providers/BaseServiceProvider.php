@@ -73,7 +73,6 @@ class BaseServiceProvider extends ServiceProvider
 
     protected function loadRoutes()
     {
-
         // System routes.
         Route::middleware(['web'])
              ->group(__DIR__.DIRECTORY_SEPARATOR.

@@ -10,6 +10,6 @@ abstract class Model extends LaravelModel
     {
         parent::__construct($attributes);
         $this->guard_name = config('galaxia.auth.guard');
-        $this->table = glxtable($this->getTable());
+        $this->table = glx_table($this->getTable());
     }
 }

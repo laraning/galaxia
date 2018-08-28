@@ -1,32 +1,21 @@
 <?php
 
-if (!function_exists('package_path')) {
-    function package_path($path)
-    {
-        $base = file_exists(base_path('vendor/laraning/galaxia')) ?
-            'vendor' :
-            'packages';
-
-        return base_path("{$base}/laraning/galaxia/src/".$path);
-    }
-}
-
-if (!function_exists('glxtable')) {
-    function glxtable($table)
+if (!function_exists('glx_table')) {
+    function glx_table($table)
     {
         return config('galaxia.database.table.prefix').'_'.$table;
     }
 }
 
-if (!function_exists('glxuser')) {
-    function glxuser()
+if (!function_exists('glx_user')) {
+    function glx_user()
     {
-        return Auth::guard(glxguard())->user();
+        return Auth::guard(glx_guard())->user();
     }
 }
 
-if (!function_exists('glxguard')) {
-    function glxguard()
+if (!function_exists('glx_guard')) {
+    function glx_guard()
     {
         return config('galaxia.auth.guard');
     }

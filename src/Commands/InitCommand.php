@@ -81,25 +81,25 @@ class InitCommand extends Command
         // Verify/create permissions and roles (permission=access, role=admin) for Galaxia guard.
         if (!Permission::where('guard_name', 'galaxia')
                      ->where('name', 'access')->exists()) {
-            Permission::create(['name' => 'access', 'guard_name' => glxguard()]);
+            Permission::create(['name' => 'access', 'guard_name' => glx_guard()]);
             $this->info('-- Galaxia permission \'access\' check: OK --');
         }
 
         if (!Role::where('guard_name', 'galaxia')
                      ->where('name', 'galaxia-admin')->exists()) {
-            Role::create(['name' => 'galaxia-admin', 'guard_name' => glxguard()]);
+            Role::create(['name' => 'galaxia-admin', 'guard_name' => glx_guard()]);
             $this->info('-- Galaxia role \'admin\' check: OK --');
         }
 
         // Assign default access permission to admin role.
-        $role = Role::findByName('galaxia-admin', glxguard());
-        if (!$role->hasPermissionTo('access', glxguard())) {
+        $role = Role::findByName('galaxia-admin', glx_guard());
+        if (!$role->hasPermissionTo('access', glx_guard())) {
             $role->givePermissionTo('access');
         }
 
         // Verify if the configured authentication gate exists.
         try {
-            $guard = Auth::guard(glxguard());
+            $guard = Auth::guard(glx_guard());
             $this->info('-- Auth configuration check: OK --');
         } catch (\Exception $e) {
             $this->error('Auth configuration check: ERROR! Galaxia auth gate don\'t exist in your auth.php configuration file. Please run galaxia:deploy-auth command.');

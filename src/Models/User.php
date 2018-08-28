@@ -22,6 +22,6 @@ class User extends Authenticatable
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->guard_name = glxguard();
+        $this->guard_name = glx_guard();
     }
 }

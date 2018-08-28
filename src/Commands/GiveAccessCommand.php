@@ -56,11 +56,11 @@ class GiveAccessCommand extends Command
         }
 
         // Admin? Check/Assign role.
-        if ($this->option('admin') && !$user->hasRole('galaxia-admin', glxguard())) {
+        if ($this->option('admin') && !$user->hasRole('galaxia-admin', glx_guard())) {
             $user->assignRole('galaxia-admin');
         }
 
-        if (!$this->option('admin') && !$user->hasPermissionTo('access', glxguard())) {
+        if (!$this->option('admin') && !$user->hasPermissionTo('access', glx_guard())) {
             $user->givePermissionTo('access');
         }
 

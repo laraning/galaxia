@@ -11,7 +11,7 @@ class Notification extends Model
     /** Local Scopes **/
     public function scopeFromThisUser($query)
     {
-        return $query->where($this->table.'.user_id', glxuser()->id);
+        return $query->where($this->table.'.user_id', glx_user()->id);
     }
 
     /* /Local Scopes **/

@@ -9,7 +9,7 @@ class Authenticate
 {
     public function handle($request, Closure $next)
     {
-        if (!Auth::guard(glxguard())->check()) {
+        if (!Auth::guard(glx_guard())->check()) {
             return redirect()->intended(route('galaxia.login.show'));
         }
 

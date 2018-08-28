@@ -35,7 +35,7 @@ class FeatureController extends Controller
 
     protected function guard()
     {
-        return Auth::guard(glxguard());
+        return Auth::guard(glx_guard());
     }
 
     public function login(LoginRequest $request)

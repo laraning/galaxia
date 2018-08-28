@@ -4,15 +4,15 @@ namespace Laraning\Galaxia;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
-use Laraning\Boost\Traits\Migratable;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Laraning\Boost\Traits\Migratable;
 
 class GalaxiaServiceProvider extends ServiceProvider
 {
     use Migratable;
 
-    protected $migrationPath = __DIR__ . '/../database/migrations/';
+    protected $migrationPath = __DIR__.'/../database/migrations/';
     protected $migrations = ['galaxia']; // No need to put "*"!
 
     public function boot()

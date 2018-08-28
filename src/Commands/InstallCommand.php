@@ -105,7 +105,7 @@ class InstallCommand extends Command
             $this->error('Auth configuration check: ERROR! Galaxia auth gate don\'t exist in your auth.php configuration file. Please run galaxia:deploy-auth command.');
 
             return;
-        };
+        }
 
         // Run vendor:publish.
         $this->info('-- Running vendor publish (--force) --');

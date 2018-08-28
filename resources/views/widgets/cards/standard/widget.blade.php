@@ -7,6 +7,11 @@ Example:
 Parameters:
 - (string) Card title.
 
+Example:
+@glxcardstd('Hi there')
+<strong>Okay Okay boss!</strong>
+@endglxcardstd
+
 Remark: Needs the @endglxcardstd at the end to close the tags.
  --}}
 

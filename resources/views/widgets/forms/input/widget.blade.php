@@ -7,6 +7,7 @@ Example:
            'icon' => 'bath',
            'title' => 'test',
            'append' => 'CHF',
+           'value' => 'Whatever',
            'name' => 'linear'])
 
 Parameters:

@@ -10,14 +10,14 @@ use Laraning\Galaxia\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class InitCommand extends Command
+class InstallCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'galaxia:init';
+    protected $signature = 'galaxia:install';
 
     /**
      * The console command description.
@@ -45,7 +45,7 @@ class InitCommand extends Command
     {
         $this->info('');
         $this->info('');
-        $this->info('*** Galaxia requisites and startup configuration check. ***');
+        $this->info('*** Welcome to Galaxia! This will perform a FULL installation on your web application. ***');
 
         // Database connectivity?
         try {
@@ -80,13 +80,13 @@ class InitCommand extends Command
 
         // Verify/create permissions and roles (permission=access, role=admin) for Galaxia guard.
         if (!Permission::where('guard_name', 'galaxia')
-                     ->where('name', 'access')->exists()) {
+                       ->where('name', 'access')->exists()) {
             Permission::create(['name' => 'access', 'guard_name' => glx_guard()]);
             $this->info('-- Galaxia permission \'access\' check: OK --');
         }
 
         if (!Role::where('guard_name', 'galaxia')
-                     ->where('name', 'galaxia-admin')->exists()) {
+                 ->where('name', 'galaxia-admin')->exists()) {
             Role::create(['name' => 'galaxia-admin', 'guard_name' => glx_guard()]);
             $this->info('-- Galaxia role \'admin\' check: OK --');
         }
@@ -105,7 +105,15 @@ class InitCommand extends Command
             $this->error('Auth configuration check: ERROR! Galaxia auth gate don\'t exist in your auth.php configuration file. Please run galaxia:deploy-auth command.');
 
             return;
-        }
+        };
+
+        // Run vendor:publish.
+        $this->info('-- Running vendor publish (--force) --');
+        $this->call('vendor:publish', [
+            '--provider' => 'Laraning\Galaxia\GalaxiaServiceProvider',
+            /*'--quiet'    => true,*/
+            '--force'    => $this->options('force'),
+            ]);
 
         $this->info('');
         $this->info('');

@@ -4,11 +4,17 @@ namespace Laraning\Galaxia;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Laraning\Boost\Traits\Migratable;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class GalaxiaServiceProvider extends ServiceProvider
 {
+    use Migratable;
+
+    protected $migrationPath = __DIR__ . '/../database/migrations/';
+    protected $migrations = ['galaxia']; // No need to put "*"!
+
     public function boot()
     {
         Schema::defaultStringLength(191);
@@ -34,7 +40,7 @@ class GalaxiaServiceProvider extends ServiceProvider
     {
         $this->commands([
             \Laraning\Galaxia\Commands\CreateUserCommand::class,
-            \Laraning\Galaxia\Commands\InitCommand::class,
+            \Laraning\Galaxia\Commands\InstallCommand::class,
             \Laraning\Galaxia\Commands\GiveAccessCommand::class,
             \Laraning\Galaxia\Commands\DeployAuthCommand::class,
         ]);
@@ -45,14 +51,6 @@ class GalaxiaServiceProvider extends ServiceProvider
         app('router')->aliasMiddleware('galaxia-authenticate', \Laraning\Galaxia\Middleware\Authenticate::class);
         app('router')->aliasMiddleware('galaxia-permission', \Spatie\Permission\Middlewares\PermissionMiddleware::class);
         app('router')->aliasMiddleware('galaxia-role', \Spatie\Permission\Middlewares\RoleMiddleware::class);
-    }
-
-    public function publishMigrations()
-    {
-        $timestamp = date('Y_m_d_His', time());
-        $this->publishes([
-            __DIR__.'/../database/migrations/create_galaxia_schema.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_galaxia_schema.php",
-        ], 'galaxia-create-schema');
     }
 
     protected function publishConfiguration()
@@ -90,7 +88,7 @@ class GalaxiaServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/assets' => public_path('galaxia'),
-        ], 'galaxia-ui-assets');
+        ], 'galaxia-assets');
 
         $this->publishes([
             __DIR__.'/AppFeatures/Galaxia' => app_path('Galaxia'),
@@ -106,6 +104,6 @@ class GalaxiaServiceProvider extends ServiceProvider
 
     protected function loadTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'galaxia-text');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'galaxia-text');
     }
 }

@@ -32,6 +32,6 @@ class SidebarComposer
         $sidebar->add($link1);
         $sidebar->add($link2);
 
-        $view->with('items', $sidebar);
+        $view->with('sidebar', $sidebar);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraning\Galaxia\UserInterface\ViewComposers;
+namespace Laraning\Galaxia\UserInterface\Composers;
 
 use Illuminate\View\View;
 use Laraning\Galaxia\Models\Notification;

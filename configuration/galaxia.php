@@ -13,9 +13,9 @@ return [
     /*** View parameters  ***/
     'views' => [
         'composers' => [
-            'sidebar'       => App\Galaxia\ViewComposers\SidebarComposer::class,
-            'breadcrumb'    => Laraning\Galaxia\UserInterface\ViewComposers\BreadcrumbComposer::class,
-            'notifications' => Laraning\Galaxia\UserInterface\ViewComposers\NotificationListComposer::class,
+            'sidebar'       => App\Galaxia\Composers\SidebarComposer::class,
+            'breadcrumb'    => Laraning\Galaxia\UserInterface\Composers\BreadcrumbComposer::class,
+            'notifications' => Laraning\Galaxia\UserInterface\Composers\NotificationListComposer::class,
         ],
     ],
 

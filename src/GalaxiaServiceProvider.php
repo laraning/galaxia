@@ -75,7 +75,7 @@ class GalaxiaServiceProvider extends ServiceProvider
     {
         // System routes.
         Route::middleware(['web'])
-             ->group(path_separators(__DIR__ . '/../routes/galaxia.php'));
+             ->group(path_separators(__DIR__.'/../routes/galaxia.php'));
     }
 
     protected function loadViews()

@@ -9,7 +9,6 @@ class FeatureController extends Controller
     public function __construct()
     {
         $this->middleware('galaxia-authenticate');
-        //$this->middleware('galaxia-permission:access');
     }
 
     public function index()
